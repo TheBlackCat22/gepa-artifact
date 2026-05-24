@@ -28,7 +28,7 @@ class ArborRunner:
             )
         else:
             command_to_run_in_tmux = (
-                f"source env.sh  && export WANDB_API_KEY={os.environ.get('WANDB_API_KEY')} && "
+                f"cd gepa_artifact/utils/arbor && export WANDB_API_KEY={os.environ.get('WANDB_API_KEY')} && "
                 f"uv run python -u -m arbor.cli serve --arbor-config {self.config_filepath} --port {port_num} "
                 f"|& tee -a {output_log_filename}; bash"
             )
@@ -59,7 +59,7 @@ class ArborRunner:
         except Exception as e:
             print(f"An unexpected error occurred: {e}")
 
-        time.sleep(10)
+        time.sleep(60)
         return self
     
     def __exit__(self, exc_type, exc_value, traceback):

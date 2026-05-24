@@ -54,7 +54,8 @@ dependencies = [
     "lark",
     "sympy",
     "levenshtein",
-    "datasets==3.6.0"
+    "datasets==3.6.0",
+    "setuptools<82"
 ]
 
 [tool.uv.sources]
