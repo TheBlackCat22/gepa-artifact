@@ -298,7 +298,7 @@ def run_experiment_and_write_results_actual(
                     "knowledgebase_qe": None,
                     "logger": logger,
                     "run_dir": runs_dir,
-                    "use_wandb": True,
+                    "use_wandb": False,
                     "wandb_api_key": wandb_api_key,
                 })
 
@@ -356,7 +356,7 @@ def run_experiment_and_write_results_actual(
                     init_args["max_metric_calls"] = num_mipro_invocations
                 
                 if "add_wandb_configs_to_initargs" in optimizer_config.langProBe_configs and optimizer_config.langProBe_configs["add_wandb_configs_to_initargs"]:
-                    init_args["use_wandb"] = True
+                    init_args["use_wandb"] = False
                     init_args["wandb_api_key"] = wandb_api_key
                     init_args["wandb_run_name"] = run_name + "_seed_" + str(seed)
                     init_args["wandb_project_name"] = "GEPA"
